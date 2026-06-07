@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Smooth in-page scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Scroll-reveal (JS-driven via RevealInit).
+   Only hides content once JS adds .js-reveal — so if JS is off, everything shows. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------------------------------------
+   Umzila-AfriRoute design tokens (Tailwind v4)
+   These become utility classes automatically, e.g.
+   --color-forest  ->  bg-forest / text-forest / border-forest
+   --animate-fade-up -> animate-fade-up
+   --------------------------------------------------------------------------- */
+@theme {
+  /* Green palette built around the brand green #52b788 */
+  --color-sage: #52b788; /* THE brand green — accents, icons, highlights */
+  --color-forest: #2d6a4f; /* deeper green — navbar, footer, buttons (white text readable) */
+  --color-emerald: #1a3c2e; /* darkest green — borders, deep sections       */
+  --color-mint: #d8f3dc; /* light green tint                             */
+  --color-offwhite: #f4faf6; /* soft green-white background                  */
+  --color-dark: #14342a; /* very deep green — hero overlay               */
+
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-dmsans), sans-serif;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-fade-in: fade-in 1s ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
