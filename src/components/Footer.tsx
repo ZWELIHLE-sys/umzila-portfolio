@@ -18,7 +18,7 @@ export default function Footer() {
             Umzila-AfriRoute
           </div>
           <div className="mt-1 text-[13px] text-dark/70">
-            Ixopo, KwaZulu-Natal — South Africa
+            Jolivet, JPP Municipality, Harry Gwala District, KwaZulu-Natal
           </div>
         </div>
 

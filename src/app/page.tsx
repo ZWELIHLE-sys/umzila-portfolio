@@ -30,7 +30,7 @@ import HeroSparks from "@/components/HeroSparks";
 
 const demos = [
   { icon: Play, label: "ScholarHub Demo" },
-  { icon: Images, label: "Vuna Prototype" },
+  { icon: Images, label: "Vuna Marketplace" },
   { icon: Lightbulb, label: "Plaas-In Concept" },
 ];
 
@@ -50,9 +50,9 @@ const platforms = [
   },
   {
     icon: Store,
-    name: "Vuna",
-    tag: "Local Marketplace",
-    desc: "A curated marketplace for genuine producers, makers, artisans and farmers — promoting people who create, grow and produce, not reselling.",
+    name: "Vuna Marketplace",
+    tag: "Makers & Producers",
+    desc: "A curated marketplace for people who genuinely make, craft and produce — artisans creating their own goods, fashion designers and farmers selling their own branded products like farm-fresh eggs. No resellers, no dropshipping.",
     focus: [
       "Local Producers",
       "Farmers",

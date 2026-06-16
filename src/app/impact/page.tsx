@@ -79,7 +79,7 @@ const areas = [
     icon: Store,
     title: "Local Producer Impact",
     intro:
-      "Through Vuna, we aim to create greater visibility for people who make, grow and produce.",
+      "Through Vuna Marketplace, we aim to create greater visibility for people who make, craft and produce.",
     points: [
       "Increased exposure for local producers",
       "Better market access",

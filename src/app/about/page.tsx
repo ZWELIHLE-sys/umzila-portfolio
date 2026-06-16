@@ -15,6 +15,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
+import HeroSparks from "@/components/HeroSparks";
 
 export const metadata: Metadata = {
   title: "About — Umzila-AfriRoute | Where Grassroots Meet Tech",
@@ -31,9 +32,9 @@ const platforms = [
   },
   {
     icon: Store,
-    name: "Vuna",
-    tag: "Local Marketplace",
-    desc: "A curated marketplace for genuine makers, artisans, farmers and local producers. Built to give the people who create, grow and produce greater visibility and access to customers — celebrating local production, not reselling.",
+    name: "Vuna Marketplace",
+    tag: "Makers & Producers",
+    desc: "A curated marketplace for people who genuinely make, craft and produce — artisans creating their own goods, fashion designers and farmers selling their own branded products like farm-fresh eggs. We celebrate authentic local creation: no resellers, no dropshipping.",
   },
   {
     icon: Tractor,
@@ -61,14 +62,15 @@ export default function AboutPage() {
       {/* ===================== HEADER ===================== */}
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
         <Image
-          src="/images/hero-cave.jpg"
+          src="/images/hero-core.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="ken-burns object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
+        <HeroSparks />
 
         <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
@@ -196,15 +198,16 @@ export default function AboutPage() {
       </section>
 
       {/* ===================== WHY TECH + COMMUNICATION ===================== */}
-      <section className="bg-offwhite px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-4xl rounded-3xl bg-sage p-10 text-center md:p-14">
-          <div className="text-[11px] font-semibold uppercase tracking-[3px] text-dark/70">
+      <section className="bg-white px-6 py-20 text-center md:px-8">
+        <div className="reveal mx-auto max-w-3xl">
+          <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
             Our Approach
           </div>
-          <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-bold leading-tight text-dark md:text-4xl">
+          <h2 className="mx-auto font-serif text-3xl font-bold leading-tight text-sage md:text-4xl">
             Why technology and communication?
           </h2>
-          <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[15px] leading-[1.9] text-dark/80">
+          <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+          <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[16px] leading-[1.9] text-gray-600">
             <p>
               Technology alone is not enough. Many good solutions fail because
               they do not understand the people they are meant to serve.
@@ -246,18 +249,19 @@ export default function AboutPage() {
       </section>
 
       {/* ===================== LOOKING AHEAD ===================== */}
-      <section className="bg-dark px-6 py-20 text-center md:px-8">
+      <section className="bg-white px-6 py-20 text-center md:px-8">
         <div className="reveal mx-auto max-w-2xl">
-          <div className="text-[11px] font-semibold uppercase tracking-[3px] text-sage">
+          <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
             Looking Ahead
           </div>
-          <h2 className="mx-auto mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">
+          <h2 className="mx-auto font-serif text-3xl font-bold leading-tight text-sage md:text-4xl">
             Different platforms, one common goal
           </h2>
-          <p className="mx-auto mt-6 text-[16px] leading-[1.9] text-mint/80">
+          <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+          <p className="mx-auto mt-6 text-[16px] leading-[1.9] text-gray-600">
             Umzila-AfriRoute is currently growing through the development of
-            ScholarHub, Vuna and Plaas-In. While each platform serves a
-            different purpose, they share one goal: using technology and
+            ScholarHub, Vuna Marketplace and Plaas-In. While each platform serves
+            a different purpose, they share one goal: using technology and
             communication to create practical solutions that improve lives and
             unlock opportunities.
           </p>
@@ -269,25 +273,8 @@ export default function AboutPage() {
 
       {/* ===================== FOUNDER ===================== */}
       <section className="bg-offwhite px-6 py-20 md:px-8">
-        <div className="reveal mx-auto grid max-w-4xl items-center gap-10 md:grid-cols-[auto_1fr]">
-          {/* Portrait */}
-          <div className="relative mx-auto w-full max-w-[15rem]">
-            <div
-              aria-hidden="true"
-              className="absolute -left-3 -top-3 h-full w-full rounded-3xl border-2 border-sage/40 bg-mint/40"
-            />
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-gray-200 shadow-xl">
-              <Image
-                src="/images/zwelihle.jpg"
-                alt="Zwelihle Mhlongo, Founder of Umzila-AfriRoute"
-                fill
-                sizes="15rem"
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Bio */}
+        <div className="reveal mx-auto max-w-2xl text-center">
+          {/* Bio (founder photo to be added via Cloudinary later) */}
           <div>
             <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
               Founder
@@ -295,7 +282,7 @@ export default function AboutPage() {
             <h3 className="font-serif text-2xl font-bold text-dark">
               Zwelihle Mhlongo
             </h3>
-            <div className="mt-3 flex flex-col gap-2 text-sm text-gray-600">
+            <div className="mt-3 flex flex-col items-center gap-2 text-sm text-gray-600">
               <span className="flex items-center gap-2">
                 <GraduationCap size={16} className="flex-shrink-0 text-sage" />
                 Diploma in Public Relations Management — University of Zululand
@@ -305,16 +292,16 @@ export default function AboutPage() {
                 Full Stack Developer Certificate — FNB App Academy
               </span>
             </div>
-            <p className="mt-4 text-[15px] leading-[1.9] text-gray-600">
+            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.9] text-gray-600">
               Founder of Umzila-AfriRoute, driven by a passion for building
               practical technology solutions that respond to local realities and
               create opportunities for communities.
             </p>
 
             {/* CTA */}
-            <div className="mt-7 flex flex-wrap gap-4">
+            <div className="mt-7 flex flex-wrap justify-center gap-4">
               <Link
-                href="/products"
+                href="/#solutions"
                 className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-sm font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
               >
                 See What We&apos;re Building
