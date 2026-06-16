@@ -69,3 +69,53 @@ html {
     opacity: 1;
   }
 }
+
+/* Hero motion: slow cinematic zoom (Ken Burns) + drifting sunset sparks */
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+
+@keyframes spark-rise {
+  0% {
+    transform: translateY(10px) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-150px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.spark {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 224, 160, 0.95),
+    rgba(212, 160, 23, 0.35)
+  );
+  box-shadow: 0 0 6px 1px rgba(255, 200, 120, 0.55);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ken-burns {
+    animation: ken-burns 22s ease-in-out infinite alternate;
+  }
+  .spark {
+    animation-name: spark-rise;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+}

@@ -59,7 +59,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ===================== HEADER ===================== */}
-      <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
+      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
         <Image
           src="/images/hero-cave.jpg"
           alt=""
@@ -68,16 +68,16 @@ export default function AboutPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
 
-        <div className="relative z-10 w-full max-w-2xl rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-2xl backdrop-blur-xl md:p-12">
-          <div className="text-[11px] font-semibold uppercase tracking-[3px] text-sage">
+        <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+          <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
             About Umzila-AfriRoute
           </div>
-          <h1 className="mt-3 font-serif text-4xl font-black text-white md:text-6xl">
-            Where grassroots meet tech
+          <h1 className="font-serif text-4xl font-black text-white drop-shadow-2xl md:text-6xl">
+            Where grassroots <span className="text-sage">meet tech</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-mint/90">
+          <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-mint/95 drop-shadow-md">
             A technology and communications initiative developing practical
             digital solutions for the communities, entrepreneurs, transport
             operators, farmers and local producers too often left behind.

@@ -3,8 +3,8 @@ import Link from "next/link";
 const footerLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Vision", href: "/vision" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Impact", href: "/#impact" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -18,7 +18,7 @@ export default function Footer() {
             Umzila-AfriRoute
           </div>
           <div className="mt-1 text-[13px] text-dark/70">
-            Jolivet, KwaZulu-Natal — for Africa
+            Ixopo, KwaZulu-Natal — South Africa
           </div>
         </div>
 
@@ -37,7 +37,7 @@ export default function Footer() {
 
         {/* Copyright (centered) */}
         <div className="w-full border-t border-dark/10 pt-6 text-xs text-dark/60">
-          © 2026 Zwelihle Mhlongo · Umzila-AfriRoute. All rights reserved.
+          © 2026 Umzila-AfriRoute. All rights reserved.
         </div>
       </div>
     </footer>

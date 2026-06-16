@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Vision", href: "/vision" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Impact", href: "/#impact" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -16,21 +17,24 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-dark/10 bg-sage">
+    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white">
       <div className="flex h-16 items-center justify-between px-6 md:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-dark font-serif text-base font-black text-white">
-            Z
-          </div>
-          <div>
-            <div className="font-serif text-base font-bold text-dark">
-              Zwelihle Mhlongo
-            </div>
-            <div className="text-[10px] uppercase tracking-[2px] text-dark/60">
-              Umzila-AfriRoute
-            </div>
-          </div>
+        <Link
+          href="/"
+          aria-label="Umzila-AfriRoute home"
+          className="flex items-center"
+        >
+          <span className="relative block h-10 w-[190px]">
+            <Image
+              src="/images/logo-umzila.jpg"
+              alt="Umzila-AfriRoute"
+              fill
+              priority
+              sizes="190px"
+              className="object-cover object-center"
+            />
+          </span>
         </Link>
 
         {/* Desktop links */}
@@ -46,7 +50,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="rounded-lg bg-dark px-4 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+            className="rounded-lg bg-sage px-4 py-2 text-[13px] font-semibold text-dark transition-opacity hover:opacity-90"
           >
             Get In Touch
           </Link>
@@ -65,12 +69,12 @@ export default function Navbar() {
 
       {/* Mobile menu (smooth slide-down) */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-out md:hidden ${
+        className={`overflow-hidden bg-white transition-all duration-300 ease-out md:hidden ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div
-          className={`flex flex-col gap-1 border-t border-dark/10 px-6 py-4 ${
+          className={`flex flex-col gap-1 border-t border-gray-200 px-6 py-4 ${
             open ? "" : "pointer-events-none"
           }`}
         >
@@ -87,7 +91,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-lg bg-dark px-4 py-2 text-center text-[13px] font-semibold text-white"
+            className="mt-2 rounded-lg bg-sage px-4 py-2 text-center text-[13px] font-semibold text-dark"
           >
             Get In Touch
           </Link>
