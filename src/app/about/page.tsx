@@ -11,6 +11,10 @@ import {
   GraduationCap,
   Code2,
   ArrowRight,
+  Users,
+  Wrench,
+  Cpu,
+  Sprout,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -51,6 +55,29 @@ const commitments = [
   "Supporting entrepreneurship",
   "Strengthening local economic participation",
   "Creating opportunities through digital solutions",
+];
+
+const values = [
+  {
+    icon: Users,
+    title: "Community First",
+    desc: "We start with the people who live the problem — never a market found in a spreadsheet.",
+  },
+  {
+    icon: Wrench,
+    title: "Built From Experience",
+    desc: "Every platform is shaped by real conditions on the ground: the rank, the route, the rural road.",
+  },
+  {
+    icon: Cpu,
+    title: "Technology as a Tool",
+    desc: "Software is the means, not the mission. If it doesn't change lives, it doesn't ship.",
+  },
+  {
+    icon: Sprout,
+    title: "Sovereignty as the Goal",
+    desc: "Communities owning their systems, their data, and their share of the economy.",
+  },
 ];
 
 export default function AboutPage() {
@@ -150,6 +177,49 @@ export default function AboutPage() {
               economic participation across transport, agriculture, education
               and local commerce.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== THE MISSION (values, nodes) ===================== */}
+      <section className="bg-white px-6 py-20 md:px-8">
+        <div className="reveal mx-auto max-w-6xl">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
+              What Drives Us
+            </div>
+            <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
+              Building from the ground level up
+            </h2>
+            <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+          </div>
+
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute left-[12.5%] right-[12.5%] top-6 hidden h-0.5 bg-sage/30 lg:block"
+            />
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              {values.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="relative flex flex-col items-center text-center"
+                  >
+                    <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-sage text-white shadow">
+                      <Icon size={22} />
+                    </span>
+                    <h3 className="mt-5 font-serif text-lg font-bold text-dark">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-gray-600">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

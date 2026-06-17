@@ -5,20 +5,11 @@ import {
   Bus,
   Store,
   Tractor,
-  Briefcase,
-  Users,
-  HeartHandshake,
-  Lightbulb,
-  TrendingUp,
-  Wrench,
-  Cpu,
-  Sprout,
-  Layers,
+  Check,
   Play,
   Images,
-  Check,
-  GraduationCap,
-  Code2,
+  Lightbulb,
+  Users,
   Laptop,
   MessagesSquare,
   Rocket,
@@ -27,6 +18,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import HeroSparks from "@/components/HeroSparks";
+import ZoomImage from "@/components/ZoomImage";
 
 const demos = [
   { icon: Play, label: "ScholarHub Demo", href: "/solutions#scholarhub" },
@@ -39,63 +31,22 @@ const platforms = [
     icon: Bus,
     name: "ScholarHub",
     tag: "Scholar Transport",
-    desc: "Supporting scholar transport administration through improved communication and coordination between operators, drivers, parents and schools.",
-    focus: [
-      "Scholar Transport Administration",
-      "Parent Communication",
-      "Driver Management",
-      "Operator Tools",
-      "Future Educational Integration",
-    ],
+    desc: "Improving communication, coordination and administration between scholar transport operators, drivers, parents and schools.",
+    focus: ["Parent App", "Driver App", "Operator App"],
   },
   {
     icon: Store,
     name: "Vuna Marketplace",
     tag: "Makers & Producers",
-    desc: "A curated marketplace for people who genuinely make, craft and produce — artisans creating their own goods, fashion designers and farmers selling their own branded products like farm-fresh eggs. No resellers, no dropshipping.",
-    focus: [
-      "Local Producers",
-      "Farmers",
-      "Artisans",
-      "Makers",
-      "Market Visibility",
-    ],
+    desc: "A curated marketplace for people who genuinely make, craft and produce — artisans, fashion designers and farmers selling their own branded products. No resellers, no dropshipping.",
+    focus: ["Local Producers", "Market Visibility", "Direct Connections"],
   },
   {
     icon: Tractor,
     name: "Plaas-In",
     tag: "Agriculture",
-    desc: "A practical agricultural administration platform supporting farmers through digital record keeping and farm management — starting with livestock.",
-    focus: [
-      "Livestock Registry",
-      "Breed Management",
-      "Health Records",
-      "Bloodline Tracking",
-      "WhatsApp Automation",
-    ],
-  },
-];
-
-const impact = [
-  {
-    icon: Briefcase,
-    title: "Supporting Entrepreneurship",
-    desc: "Helping local businesses and producers access opportunities.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Strengthening Communities",
-    desc: "Improving communication, transparency and participation.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Encouraging Innovation",
-    desc: "Developing practical solutions for local challenges.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Promoting Economic Growth",
-    desc: "Supporting sectors that contribute to community development.",
+    desc: "Practical agricultural administration for farmers — starting with livestock records and management, built around real farming realities.",
+    focus: ["Livestock Core", "Health & Bloodline", "WhatsApp Automation"],
   },
 ];
 
@@ -119,29 +70,6 @@ const whyUs = [
     icon: Rocket,
     title: "Future Ready",
     desc: "Building scalable solutions designed for long-term growth.",
-  },
-];
-
-const values = [
-  {
-    icon: Users,
-    title: "Community First",
-    desc: "We start with the people who live the problem — never a market found in a spreadsheet.",
-  },
-  {
-    icon: Wrench,
-    title: "Built From Experience",
-    desc: "Every platform is shaped by real conditions on the ground: the rank, the route, the rural road.",
-  },
-  {
-    icon: Cpu,
-    title: "Technology as a Tool",
-    desc: "Software is the means, not the mission. If it doesn't change lives, it doesn't ship.",
-  },
-  {
-    icon: Sprout,
-    title: "Sovereignty as the Goal",
-    desc: "Communities owning their systems, their data, and their share of the economy.",
   },
 ];
 
@@ -185,10 +113,10 @@ export default function HomePage() {
               <ArrowRight size={16} />
             </Link>
             <Link
-              href="/portfolio"
+              href="/about"
               className="rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-[15px] font-medium text-white backdrop-blur-md transition-colors hover:bg-white/20"
             >
-              View Our Portfolio
+              Learn More
             </Link>
           </div>
         </div>
@@ -255,11 +183,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== OUR PLATFORMS (Solutions) ===================== */}
-      <section
-        id="solutions"
-        className="scroll-mt-20 bg-offwhite px-6 py-20 md:px-8"
-      >
+      {/* ===================== OUR PLATFORMS (teaser) ===================== */}
+      <section className="bg-offwhite px-6 py-20 md:px-8">
         <div className="reveal mx-auto max-w-6xl">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
@@ -269,8 +194,8 @@ export default function HomePage() {
               Solutions built for real life
             </h2>
             <p className="mx-auto mt-3 max-w-md text-[15px] text-gray-500">
-              Different platforms, one goal — practical technology rooted in
-              everyday realities.
+              Three platforms, one goal — practical technology rooted in everyday
+              realities.
             </p>
           </div>
 
@@ -316,142 +241,71 @@ export default function HomePage() {
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* ===================== OUR IMPACT ===================== */}
-      <section id="impact" className="scroll-mt-20 bg-white px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-6xl">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
-              Our Impact
-            </div>
-            <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
-              The difference we&apos;re building toward
-            </h2>
-          </div>
-
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="absolute left-[12.5%] right-[12.5%] top-6 hidden h-0.5 bg-sage/30 lg:block"
-            />
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-              {impact.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className="relative flex flex-col items-center text-center"
-                  >
-                    <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-sage text-white shadow">
-                      <Icon size={22} />
-                    </span>
-                    <h3 className="mt-5 font-serif text-lg font-bold text-dark">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-gray-600">
-                      {item.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/solutions"
+              className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
+            >
+              Explore All Solutions
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ===================== MISSION ===================== */}
-      <section className="bg-offwhite px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-6xl">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+      {/* ===================== PRODUCT PREVIEW (Vuna) ===================== */}
+      <section className="bg-white px-6 py-20 md:px-8">
+        <div className="reveal mx-auto max-w-4xl">
+          <div className="text-center">
             <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
-              The Mission
+              In Development
             </div>
             <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
-              Building from the ground level up
+              See it taking shape
             </h2>
-            <p className="mx-auto mt-4 text-[16px] leading-[1.9] text-gray-600">
-              We don&apos;t build technology for its own sake. Every platform
-              begins with a real problem — in transport, agriculture, local
-              commerce or community development. Technology is only the tool;
-              community ownership is the goal.
+            <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+            <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.9] text-gray-600">
+              A first look at{" "}
+              <strong className="text-dark">Vuna Marketplace</strong> — our
+              curated marketplace for genuine makers and producers. 85%
+              complete, and the first platform going live.
             </p>
           </div>
 
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="absolute left-[12.5%] right-[12.5%] top-6 hidden h-0.5 bg-sage/30 lg:block"
+          <div className="mt-10">
+            <ZoomImage
+              src="https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781655731/vunamarketplace_dlln6r.jpg"
+              alt="Vuna Marketplace preview"
             />
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-              {values.map(({ icon: Icon, title, desc }) => (
-                <div
-                  key={title}
-                  className="relative flex flex-col items-center text-center"
-                >
-                  <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border-4 border-offwhite bg-sage text-white shadow">
-                    <Icon size={22} />
-                  </span>
-                  <h3 className="mt-5 font-serif text-lg font-bold text-dark">
-                    {title}
-                  </h3>
-                  <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-gray-600">
-                    {desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/solutions#vuna"
+              className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
+            >
+              Explore Vuna Marketplace
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ===================== VISION ===================== */}
-      <section className="relative flex min-h-[75vh] items-center overflow-hidden px-6 py-24 md:px-8">
-        <Image
-          src="/images/vision2.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/40" />
-
-        <div className="reveal relative z-10 mx-auto w-full max-w-5xl">
-          <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-white backdrop-blur-md">
-            <Layers size={13} />
-            Our Vision
-          </div>
-          <h2 className="max-w-2xl font-serif text-4xl font-bold leading-tight text-white drop-shadow-lg md:text-6xl">
-            Technology that reaches where it&apos;s needed most
-          </h2>
-          <div className="mt-6 h-1 w-16 rounded-full bg-sage" />
-          <p className="mt-6 max-w-2xl text-[16px] leading-[1.9] text-mint/95 drop-shadow-md md:text-lg">
-            To build innovative technology and communication solutions that
-            empower communities, strengthen local economies, and create
-            opportunities where they are needed most.
-          </p>
-          <p className="mt-4 max-w-2xl text-[16px] font-medium leading-[1.9] text-white drop-shadow-md md:text-lg">
-            The future shouldn&apos;t arrive only in the cities — it should reach
-            everyone.
-          </p>
-        </div>
-      </section>
-
-      {/* ===================== WHY UMZILA-AFRIROUTE ===================== */}
+      {/* ===================== WHY UMZILA-AFRIROUTE (nodes) ===================== */}
       <section className="bg-white px-6 py-20 md:px-8">
         <div className="reveal mx-auto max-w-6xl">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
             <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
               Why Umzila-AfriRoute?
             </div>
             <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
               What sets us apart
             </h2>
+            <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
           </div>
 
           <div className="relative">
-            {/* Connecting line (desktop only) */}
             <div
               aria-hidden="true"
               className="absolute left-[12.5%] right-[12.5%] top-6 hidden h-0.5 bg-sage/30 lg:block"
@@ -481,33 +335,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== FOUNDER (text only) ===================== */}
-      <section className="bg-offwhite px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-2xl text-center">
+      {/* ===================== IMPACT TEASER ===================== */}
+      <section className="bg-offwhite px-6 py-20 text-center md:px-8">
+        <div className="reveal mx-auto max-w-2xl">
           <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
-            Founder
+            Our Impact
           </div>
-          <h2 className="font-serif text-3xl font-bold text-dark">
-            Zwelihle Mhlongo
+          <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
+            Real change for real communities
           </h2>
-          <p className="mt-1 text-sm font-semibold text-forest">
-            Umzila-AfriRoute
+          <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+          <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.9] text-gray-600">
+            From supporting entrepreneurship and strengthening communities to
+            encouraging innovation and economic growth — see the difference our
+            platforms are built to make.
           </p>
-          <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
-            <span className="flex items-center gap-2">
-              <GraduationCap size={16} className="flex-shrink-0 text-sage" />
-              Diploma in Public Relations Management (University of Zululand)
-            </span>
-            <span className="flex items-center gap-2">
-              <Code2 size={16} className="flex-shrink-0 text-sage" />
-              Full Stack Developer Certificate (FNB App Academy)
-            </span>
-          </div>
-          <p className="mx-auto mt-6 max-w-xl text-[15px] leading-[1.9] text-gray-600">
-            Driven by a passion for combining technology, communication and
-            community understanding to create practical solutions that generate
-            opportunities and positive impact.
-          </p>
+          <Link
+            href="/impact"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
+          >
+            See Our Impact
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
@@ -525,17 +374,17 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/about"
+              href="/portfolio"
               className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
             >
-              View Portfolio
+              View Our Portfolio
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/contact"
               className="rounded-xl border border-dark/20 px-7 py-3.5 text-[15px] font-medium text-dark transition-colors hover:bg-dark/5"
             >
-              Contact Us
+              Get In Touch
             </Link>
           </div>
         </div>
