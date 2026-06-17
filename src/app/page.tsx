@@ -19,6 +19,7 @@ import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import HeroSparks from "@/components/HeroSparks";
 import ZoomImage from "@/components/ZoomImage";
+import PhoneMockup from "@/components/PhoneMockup";
 
 const demos = [
   { icon: Play, label: "ScholarHub Demo", href: "/solutions#scholarhub" },
@@ -48,6 +49,12 @@ const platforms = [
     desc: "Practical agricultural administration for farmers — starting with livestock records and management, built around real farming realities.",
     focus: ["Livestock Core", "Health & Bloodline", "WhatsApp Automation"],
   },
+];
+
+const scholarApps = [
+  { label: "Parent App", src: "" },
+  { label: "Driver App", src: "" },
+  { label: "Operator App", src: "" },
 ];
 
 const whyUs = [
@@ -293,7 +300,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== WHY UMZILA-AFRIROUTE (nodes) ===================== */}
-      <section className="bg-white px-6 py-20 md:px-8">
+      <section className="bg-offwhite px-6 py-20 md:px-8">
         <div className="reveal mx-auto max-w-6xl">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
@@ -318,7 +325,7 @@ export default function HomePage() {
                     key={item.title}
                     className="relative flex flex-col items-center text-center"
                   >
-                    <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-sage text-white shadow">
+                    <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border-4 border-offwhite bg-sage text-white shadow">
                       <Icon size={22} />
                     </span>
                     <h3 className="mt-5 font-serif text-lg font-bold text-dark">
@@ -331,6 +338,47 @@ export default function HomePage() {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== SCHOLARHUB APP SHOWCASE ===================== */}
+      <section className="bg-white px-6 py-20 md:px-8">
+        <div className="reveal mx-auto max-w-5xl">
+          <div className="text-center">
+            <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
+              90% Complete
+            </div>
+            <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
+              ScholarHub, in your hand
+            </h2>
+            <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+            <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.9] text-gray-600">
+              Three connected apps — for parents, drivers and operators —
+              bringing safety, coordination and transparency to scholar
+              transport.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {scholarApps.map((app) => (
+              <PhoneMockup
+                key={app.label}
+                src={app.src}
+                alt={`ScholarHub ${app.label}`}
+                label={app.label}
+              />
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/solutions#scholarhub"
+              className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
+            >
+              Explore ScholarHub
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

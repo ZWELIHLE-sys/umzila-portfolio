@@ -6,7 +6,6 @@ import {
   Store,
   Tractor,
   Video,
-  Images,
   LayoutDashboard,
   ArrowRight,
 } from "lucide-react";
@@ -14,6 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import MediaPlaceholder from "@/components/MediaPlaceholder";
+import ScreenshotGallery from "@/components/ScreenshotGallery";
 
 export const metadata: Metadata = {
   title: "Portfolio — Umzila-AfriRoute | Proof of Work",
@@ -27,10 +27,19 @@ const scholarVideos = [
   { title: "Operator App Walkthrough", src: "" },
 ];
 const vunaScreens = [
-  { title: "Homepage", src: "" },
-  { title: "Marketplace", src: "" },
-  { title: "Seller Profile", src: "" },
-  { title: "Product Listing", src: "" },
+  {
+    title: "Home",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781655731/vunamarketplace_dlln6r.jpg",
+  },
+  { title: "Shop", src: "" },
+  { title: "Market", src: "" },
+  { title: "Auction", src: "" },
+  { title: "Sellers", src: "" },
+  { title: "Buyer Dashboard", src: "" },
+  { title: "Seller Dashboard", src: "" },
+  { title: "Cart", src: "" },
+  { title: "Login", src: "" },
+  { title: "Join", src: "" },
 ];
 const plaasMedia = [
   { title: "Prototype Screenshots", src: "" },
@@ -48,16 +57,17 @@ function PlatformHeading({
   kind: string;
 }) {
   return (
-    <div className="mb-8 flex items-center gap-3">
-      <span className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-sage text-white">
-        <Icon size={22} />
+    <div className="mb-10 flex flex-col items-center text-center">
+      <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sage text-white">
+        <Icon size={24} />
       </span>
-      <div>
-        <h2 className="font-serif text-2xl font-bold text-dark">{name}</h2>
-        <div className="text-[11px] font-semibold uppercase tracking-[2px] text-forest/70">
-          {kind}
-        </div>
+      <h2 className="mt-4 font-serif text-2xl font-bold text-dark md:text-3xl">
+        {name}
+      </h2>
+      <div className="mt-1 text-[11px] font-semibold uppercase tracking-[2px] text-forest/70">
+        {kind}
       </div>
+      <div className="mt-4 h-1 w-12 rounded-full bg-sage" />
     </div>
   );
 }
@@ -127,33 +137,12 @@ export default function PortfolioPage() {
       {/* ===================== VUNA SCREENSHOTS ===================== */}
       <section className="border-t border-gray-100 bg-white px-6 py-20 md:px-8">
         <div className="reveal mx-auto max-w-6xl">
-          <PlatformHeading icon={Store} name="Vuna Marketplace" kind="Screenshots" />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {vunaScreens.map((s) =>
-              s.src ? (
-                <div
-                  key={s.title}
-                  className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-gray-200"
-                >
-                  <Image
-                    src={s.src}
-                    alt={s.title}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
-                  />
-                </div>
-              ) : (
-                <MediaPlaceholder
-                  key={s.title}
-                  icon={Images}
-                  title={s.title}
-                  subtitle="Screenshot"
-                  aspect="aspect-[4/3]"
-                />
-              ),
-            )}
-          </div>
+          <PlatformHeading
+            icon={Store}
+            name="Vuna Marketplace"
+            kind="Screenshots"
+          />
+          <ScreenshotGallery slides={vunaScreens} />
         </div>
       </section>
 

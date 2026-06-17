@@ -91,13 +91,19 @@ const vunaFeatures = [
   "Community-Focused Marketplace",
 ];
 const vunaScreens = [
-  { title: "Homepage", src: "" },
   {
-    title: "Marketplace",
+    title: "Home",
     src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781655731/vunamarketplace_dlln6r.jpg",
   },
-  { title: "Seller Profile", src: "" },
-  { title: "Product Listing", src: "" },
+  { title: "Shop", src: "" },
+  { title: "Market", src: "" },
+  { title: "Auction", src: "" },
+  { title: "Sellers", src: "" },
+  { title: "Buyer Dashboard", src: "" },
+  { title: "Seller Dashboard", src: "" },
+  { title: "Cart", src: "" },
+  { title: "Login", src: "" },
+  { title: "Join", src: "" },
 ];
 
 const plaasPhase1 = [

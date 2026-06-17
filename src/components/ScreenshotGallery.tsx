@@ -15,39 +15,35 @@ export default function ScreenshotGallery({ slides }: { slides: Slide[] }) {
 
   return (
     <div className="mx-auto max-w-4xl">
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-gray-200 bg-offwhite">
-        {/* Slide (keyed so it re-fades on change) */}
-        <div key={index} className="animate-fade-in absolute inset-0">
-          {current.src ? (
-            <button
-              type="button"
-              onClick={() => setZoomed(true)}
-              aria-label={`Enlarge ${current.title}`}
-              className="h-full w-full cursor-zoom-in"
-            >
-              <Image
-                src={current.src}
-                alt={current.title}
-                fill
-                quality={90}
-                sizes="(max-width: 896px) 100vw, 896px"
-                className="object-contain"
-              />
-              <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-dark/70 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
-                <ZoomIn size={14} />
-                Click to enlarge
-              </span>
-            </button>
-          ) : (
-            <div className="flex h-full w-full flex-col items-center justify-center text-center">
-              <Images size={30} className="text-sage" />
-              <div className="mt-2 text-sm font-semibold text-dark">
-                {current.title}
-              </div>
-              <div className="text-xs text-gray-500">Coming soon</div>
+      <div className="relative [perspective:1400px]">
+        {current.src ? (
+          <button
+            key={index}
+            type="button"
+            onClick={() => setZoomed(true)}
+            aria-label={`Enlarge ${current.title}`}
+            className="page-flip relative block w-full cursor-zoom-in overflow-hidden rounded-2xl border border-gray-200 shadow-sm"
+          >
+            {/* Plain img so the screenshot keeps its own natural shape (no fixed box / letterbox) */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={current.src} alt={current.title} className="block w-full" />
+            <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-dark/70 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+              <ZoomIn size={14} />
+              Click to enlarge
+            </span>
+          </button>
+        ) : (
+          <div
+            key={index}
+            className="page-flip flex aspect-[16/10] w-full flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white text-center"
+          >
+            <Images size={30} className="text-sage" />
+            <div className="mt-2 text-sm font-semibold text-dark">
+              {current.title}
             </div>
-          )}
-        </div>
+            <div className="text-xs text-gray-500">Coming soon</div>
+          </div>
+        )}
 
         {count > 1 && (
           <>

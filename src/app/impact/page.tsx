@@ -307,16 +307,17 @@ export default function ImpactPage() {
       <section className="bg-white px-6 py-20 text-center md:px-8">
         <div className="reveal mx-auto max-w-3xl">
           <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
-            For the Municipality
+            For Partners &amp; Institutions
           </div>
           <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
-            Municipal Impact
+            Impact at scale
           </h2>
           <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
           <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.9] text-gray-600">
             Umzila-AfriRoute aligns with broader goals of economic development,
-            digital transformation and community empowerment. By supporting
-            innovation at grassroots level, municipalities can help build:
+            digital transformation and community empowerment. By backing
+            innovation at grassroots level, municipalities, partners and
+            development institutions can help build:
           </p>
           <ul className="mx-auto mt-6 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
             {municipal.map((p) => (

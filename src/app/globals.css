@@ -119,3 +119,23 @@ html {
     animation-iteration-count: infinite;
   }
 }
+
+/* Book-style page-turn for the screenshot gallery */
+@keyframes page-turn {
+  from {
+    transform: rotateY(-105deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-flip {
+    transform-origin: left center;
+    backface-visibility: hidden;
+    animation: page-turn 0.55s ease-out both;
+  }
+}
