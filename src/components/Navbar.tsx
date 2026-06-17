@@ -8,7 +8,8 @@ import { Menu, X } from "lucide-react";
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Solutions", href: "/#solutions" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Impact", href: "/impact" },
   { label: "Contact", href: "/contact" },
 ];
@@ -38,7 +39,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -59,7 +60,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="text-dark md:hidden"
+          className="text-dark lg:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={open}
         >
@@ -69,8 +70,8 @@ export default function Navbar() {
 
       {/* Mobile menu (smooth slide-down) */}
       <div
-        className={`overflow-hidden bg-white transition-all duration-300 ease-out md:hidden ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden bg-white transition-all duration-300 ease-out lg:hidden ${
+          open ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div

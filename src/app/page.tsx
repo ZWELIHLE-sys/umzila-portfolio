@@ -29,9 +29,9 @@ import RevealInit from "@/components/RevealInit";
 import HeroSparks from "@/components/HeroSparks";
 
 const demos = [
-  { icon: Play, label: "ScholarHub Demo" },
-  { icon: Images, label: "Vuna Marketplace" },
-  { icon: Lightbulb, label: "Plaas-In Concept" },
+  { icon: Play, label: "ScholarHub Demo", href: "/solutions#scholarhub" },
+  { icon: Images, label: "Vuna Marketplace", href: "/solutions#vuna" },
+  { icon: Lightbulb, label: "Plaas-In Concept", href: "/solutions#plaasin" },
 ];
 
 const platforms = [
@@ -178,14 +178,14 @@ export default function HomePage() {
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3.5">
             <Link
-              href="/#solutions"
+              href="/solutions"
               className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
             >
-              Explore Our Platforms
+              Explore Our Solutions
               <ArrowRight size={16} />
             </Link>
             <Link
-              href="/about"
+              href="/portfolio"
               className="rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-[15px] font-medium text-white backdrop-blur-md transition-colors hover:bg-white/20"
             >
               View Our Portfolio
@@ -209,7 +209,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={d.label}
-                  href="/#solutions"
+                  href={d.href}
                   className="inline-flex items-center gap-2 rounded-xl border border-sage/40 bg-white px-5 py-3 text-sm font-semibold text-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-sage hover:shadow-md"
                 >
                   <Icon size={18} className="text-sage" />
@@ -306,7 +306,7 @@ export default function HomePage() {
                     ))}
                   </div>
                   <Link
-                    href="/contact"
+                    href="/solutions"
                     className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-forest transition-all hover:gap-2.5"
                   >
                     Learn More
