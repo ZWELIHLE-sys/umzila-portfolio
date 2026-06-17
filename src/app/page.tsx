@@ -52,9 +52,18 @@ const platforms = [
 ];
 
 const scholarApps = [
-  { label: "Parent App", src: "" },
-  { label: "Driver App", src: "" },
-  { label: "Operator App", src: "" },
+  {
+    label: "Parent App",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727410/parentappscreenshoot_cely3h.jpg",
+  },
+  {
+    label: "Driver App",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727443/driverappscreenshoot_gulwhh.jpg",
+  },
+  {
+    label: "Operator App",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727425/operatorapp_screenshoot_akkg5z.jpg",
+  },
 ];
 
 const whyUs = [
@@ -282,7 +291,7 @@ export default function HomePage() {
 
           <div className="mt-10">
             <ZoomImage
-              src="https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781655731/vunamarketplace_dlln6r.jpg"
+              src="https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727625/homepage_vuna_bt5d6q.jpg"
               alt="Vuna Marketplace preview"
             />
           </div>

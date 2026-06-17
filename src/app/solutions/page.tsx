@@ -26,6 +26,7 @@ import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import MediaPlaceholder from "@/components/MediaPlaceholder";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
+import { scholarVideos, vunaScreens } from "@/data/media";
 
 export const metadata: Metadata = {
   title: "Solutions — Umzila-AfriRoute | ScholarHub, Vuna, Plaas-In",
@@ -67,15 +68,6 @@ const scholarComponents = [
 ];
 
 // Add the Cloudinary URL to `src` to replace the placeholder with the video.
-const scholarVideos = [
-  { title: "Parent App Walkthrough", src: "" },
-  { title: "Driver App Walkthrough", src: "" },
-  {
-    title: "Operator App Walkthrough",
-    src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1781655687/operatorapp_g0jrvj.mp4",
-  },
-];
-
 const vunaAudience = [
   "Farmers",
   "Makers",
@@ -90,22 +82,6 @@ const vunaFeatures = [
   "Direct Buyer-Seller Connections",
   "Community-Focused Marketplace",
 ];
-const vunaScreens = [
-  {
-    title: "Home",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781655731/vunamarketplace_dlln6r.jpg",
-  },
-  { title: "Shop", src: "" },
-  { title: "Market", src: "" },
-  { title: "Auction", src: "" },
-  { title: "Sellers", src: "" },
-  { title: "Buyer Dashboard", src: "" },
-  { title: "Seller Dashboard", src: "" },
-  { title: "Cart", src: "" },
-  { title: "Login", src: "" },
-  { title: "Join", src: "" },
-];
-
 const plaasPhase1 = [
   "Animal Registry",
   "Breed Registry",

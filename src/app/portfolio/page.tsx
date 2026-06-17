@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import MediaPlaceholder from "@/components/MediaPlaceholder";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
+import { scholarVideos, vunaScreens } from "@/data/media";
 
 export const metadata: Metadata = {
   title: "Portfolio — Umzila-AfriRoute | Proof of Work",
@@ -21,26 +22,6 @@ export const metadata: Metadata = {
     "Evidence of development across ScholarHub, Vuna Marketplace and Plaas-In — videos, screenshots, prototype diagrams and documents.",
 };
 
-const scholarVideos = [
-  { title: "Parent App Walkthrough", src: "" },
-  { title: "Driver App Walkthrough", src: "" },
-  { title: "Operator App Walkthrough", src: "" },
-];
-const vunaScreens = [
-  {
-    title: "Home",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781655731/vunamarketplace_dlln6r.jpg",
-  },
-  { title: "Shop", src: "" },
-  { title: "Market", src: "" },
-  { title: "Auction", src: "" },
-  { title: "Sellers", src: "" },
-  { title: "Buyer Dashboard", src: "" },
-  { title: "Seller Dashboard", src: "" },
-  { title: "Cart", src: "" },
-  { title: "Login", src: "" },
-  { title: "Join", src: "" },
-];
 const plaasMedia = [
   { title: "Prototype Screenshots", src: "" },
   { title: "Concept Diagrams", src: "" },
