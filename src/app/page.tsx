@@ -167,15 +167,15 @@ export default function HomePage() {
 
       {/* ===================== WHAT WE DO ===================== */}
       <section className="bg-white px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-3xl">
+        <div className="reveal mx-auto max-w-3xl text-center">
           <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
             What We Do
           </div>
           <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
             Innovation from the ground up
           </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-sage" />
-          <div className="mt-6 space-y-4 text-[16px] leading-[1.9] text-gray-600">
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-sage" />
+          <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[16px] leading-[1.9] text-gray-600">
             <p>
               Technology should not only serve large cities and established
               businesses. At Umzila-AfriRoute, we believe innovation can emerge
@@ -191,7 +191,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <blockquote className="mt-8 border-l-4 border-sage pl-5 font-serif text-lg italic leading-relaxed text-dark md:text-xl">
+          <blockquote className="mx-auto mt-8 max-w-2xl font-serif text-lg italic leading-relaxed text-dark md:text-xl">
             &ldquo;Innovation does not have to come from the biggest city or the
             largest company. Sometimes it begins with understanding a local
             problem and having the courage to solve it.&rdquo;

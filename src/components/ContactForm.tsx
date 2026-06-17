@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, CheckCircle2, Loader2 } from "lucide-react";
 
 const inputClass =
   "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-400 transition-colors focus:border-sage focus:outline-none focus:ring-2 focus:ring-sage/30";
 
-export default function ContactForm({ email }: { email: string }) {
+type Status = "idle" | "sending" | "success" | "error";
+
+export default function ContactForm({ endpoint }: { endpoint: string }) {
+  const [status, setStatus] = useState<Status>("idle");
   const [form, setForm] = useState({
     name: "",
     org: "",
@@ -20,22 +23,63 @@ export default function ContactForm({ email }: { email: string }) {
     setForm((f) => ({ ...f, [field]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      form.subject || `Website enquiry from ${form.name || "a visitor"}`,
+    setStatus("sending");
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          organisation: form.org,
+          email: form.email,
+          phone: form.phone,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({
+          name: "",
+          org: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="mt-8 rounded-2xl border border-sage/40 bg-mint/30 p-8 text-center">
+        <CheckCircle2 className="mx-auto text-sage" size={40} />
+        <h3 className="mt-3 font-serif text-xl font-bold text-dark">
+          Message sent!
+        </h3>
+        <p className="mx-auto mt-2 max-w-sm text-sm text-gray-600">
+          Thank you for reaching out — we&apos;ll get back to you as soon as we
+          can.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="mt-4 text-sm font-semibold text-forest transition-colors hover:text-dark"
+        >
+          Send another message
+        </button>
+      </div>
     );
-    const body = encodeURIComponent(
-      [
-        `Name: ${form.name}`,
-        `Organisation: ${form.org}`,
-        `Email: ${form.email}`,
-        `Phone: ${form.phone}`,
-        "",
-        form.message,
-      ].join("\n"),
-    );
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -116,12 +160,28 @@ export default function ContactForm({ email }: { email: string }) {
         />
       </div>
 
+      {status === "error" && (
+        <p className="text-sm font-medium text-red-600">
+          Something went wrong. Please try again, or email us directly.
+        </p>
+      )}
+
       <button
         type="submit"
-        className="inline-flex items-center justify-center gap-2 self-start rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
+        disabled={status === "sending"}
+        className="inline-flex items-center justify-center gap-2 self-start rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        <Send size={16} />
-        Send Message
+        {status === "sending" ? (
+          <>
+            <Loader2 size={16} className="animate-spin" />
+            Sending...
+          </>
+        ) : (
+          <>
+            <Send size={16} />
+            Send Message
+          </>
+        )}
       </button>
     </form>
   );

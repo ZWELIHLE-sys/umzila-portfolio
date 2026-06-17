@@ -116,15 +116,15 @@ export default function AboutPage() {
 
       {/* ===================== WHO WE ARE ===================== */}
       <section className="bg-white px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-3xl">
+        <div className="reveal mx-auto max-w-3xl text-center">
           <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
             Who We Are
           </div>
           <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
             Built from lived experience
           </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-sage" />
-          <div className="mt-6 space-y-4 text-[16px] leading-[1.9] text-gray-600">
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-sage" />
+          <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[16px] leading-[1.9] text-gray-600">
             <p>
               Umzila-AfriRoute is a technology and communications initiative
               founded to develop practical digital solutions that respond to
