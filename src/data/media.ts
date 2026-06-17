@@ -5,11 +5,14 @@
 // ============================================================================
 
 export const scholarVideos = [
-  { title: "Parent App Walkthrough", src: "" },
+  {
+    title: "Parent App Walkthrough",
+    src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1781730906/parentapp_vidoe_sroyr7.mp4",
+  },
   { title: "Driver App Walkthrough", src: "" },
   {
     title: "Operator App Walkthrough",
-    src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1781655687/operatorapp_g0jrvj.mp4",
+    src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1781730972/operator_app_vidoe_kcrcwj.mp4",
   },
 ];
 
