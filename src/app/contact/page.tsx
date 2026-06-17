@@ -16,8 +16,10 @@ import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import ContactForm from "@/components/ContactForm";
 
-// Primary business inbox (the contact form sends here).
-const CONTACT_EMAIL = "umzilascholarhub@outlook.com";
+// Contact form endpoint. Create a free form at formspree.io and set its
+// recipient to zweh.mhlongo@gmail.com (your phone default; you can also add
+// umzilascholarhub@outlook.com), then replace YOUR_FORM_ID below.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqeoonpg";
 
 export const metadata: Metadata = {
   title: "Contact — Umzila-AfriRoute | Get In Touch",
@@ -243,7 +245,7 @@ export default function ContactPage() {
             organisations that share our vision.
           </p>
 
-          <ContactForm email={CONTACT_EMAIL} />
+          <ContactForm endpoint={FORMSPREE_ENDPOINT} />
         </div>
       </section>
 
