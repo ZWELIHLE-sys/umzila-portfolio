@@ -22,7 +22,7 @@ export default function RevealInit() {
           }
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" },
     );
 
     elements.forEach((el) => observer.observe(el));

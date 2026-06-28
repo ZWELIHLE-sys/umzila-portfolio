@@ -10,23 +10,16 @@ import {
   Building2,
   Check,
   ArrowRight,
-  Video,
-  Milk,
-  Egg,
-  Sprout,
-  MessageCircle,
   Cpu,
   MessagesSquare,
   MapPin,
-  ChevronDown,
-  ChevronRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
-import MediaPlaceholder from "@/components/MediaPlaceholder";
-import ScreenshotGallery from "@/components/ScreenshotGallery";
-import { scholarVideos, vunaScreens } from "@/data/media";
+import HeroSparks from "@/components/HeroSparks";
+import PhoneMockup from "@/components/PhoneMockup";
+import { scholarShots, vunaScreens } from "@/data/media";
 
 export const metadata: Metadata = {
   title: "Solutions — Umzila-AfriRoute | ScholarHub, Vuna, Plaas-In",
@@ -67,7 +60,6 @@ const scholarComponents = [
   },
 ];
 
-// Add the Cloudinary URL to `src` to replace the placeholder with the video.
 const vunaAudience = [
   "Farmers",
   "Makers",
@@ -81,27 +73,6 @@ const vunaFeatures = [
   "Local Visibility",
   "Direct Buyer-Seller Connections",
   "Community-Focused Marketplace",
-];
-const plaasPhase1 = [
-  "Animal Registry",
-  "Breed Registry",
-  "Health Records",
-  "Bloodline Tracking",
-  "Reporting",
-];
-const plaasFuture = [
-  { icon: Milk, label: "Dairy" },
-  { icon: Egg, label: "Poultry" },
-  { icon: Sprout, label: "Crops" },
-  { icon: MessageCircle, label: "WhatsApp Automation" },
-];
-const plaasFlow = [
-  "Plaas-In",
-  "Livestock",
-  "Dairy",
-  "Poultry",
-  "Crops",
-  "Automation",
 ];
 
 const pillars = [
@@ -145,7 +116,7 @@ export default function SolutionsPage() {
       {/* ===================== HERO ===================== */}
       <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
         <Image
-          src="/images/code.jpg"
+          src="/images/scholartrans.jpg"
           alt=""
           fill
           priority
@@ -153,13 +124,15 @@ export default function SolutionsPage() {
           className="ken-burns object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
+        <HeroSparks />
 
-        <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+        <div className="hero-enter relative z-10 mx-auto w-full max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
             Our Solutions
           </div>
           <h1 className="font-serif text-4xl font-black text-white drop-shadow-2xl md:text-6xl">
-            Practical solutions, <span className="text-sage">built for real life</span>
+            Practical solutions,{" "}
+            <span className="text-sage">built for real life</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-mint/95 drop-shadow-md">
             We are developing practical technology solutions designed to address
@@ -224,39 +197,26 @@ export default function SolutionsPage() {
             })}
           </div>
 
-          {/* Demonstration */}
+          {/* A look inside (screenshots) */}
           <h3 className="mt-16 text-center font-serif text-2xl font-bold text-dark">
-            Demonstration
+            A Look Inside
           </h3>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {scholarVideos.map((v) =>
-              v.src ? (
-                <video
-                  key={v.title}
-                  controls
-                  controlsList="nodownload"
-                  disablePictureInPicture
-                  preload="metadata"
-                  className="aspect-video w-full rounded-2xl border border-gray-200 bg-dark"
-                >
-                  <source src={v.src} />
-                </video>
-              ) : (
-                <MediaPlaceholder
-                  key={v.title}
-                  icon={Video}
-                  title={v.title}
-                  subtitle="Walkthrough video"
-                />
-              ),
-            )}
+          <div className="mt-8 grid gap-8 sm:grid-cols-3">
+            {scholarShots.map((s) => (
+              <PhoneMockup
+                key={s.title}
+                src={s.src}
+                alt={s.title}
+                label={s.title}
+              />
+            ))}
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-10 text-center">
             <Link
               href="/portfolio"
               className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
             >
-              View ScholarHub Demo
+              See ScholarHub in action
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -295,7 +255,7 @@ export default function SolutionsPage() {
                 </span>
               ))}
             </div>
-            <StatusBadge>Status: 85% Complete · Launching first</StatusBadge>
+            <StatusBadge>Status: 45% Complete</StatusBadge>
           </div>
 
           {/* Features */}
@@ -314,131 +274,52 @@ export default function SolutionsPage() {
             ))}
           </div>
 
-          {/* Demonstration (screenshot gallery) */}
+          {/* A look inside (single still) */}
           <h3 className="mt-16 text-center font-serif text-2xl font-bold text-dark">
-            Demonstration
+            A Look Inside
           </h3>
-          <div className="mt-8">
-            <ScreenshotGallery slides={vunaScreens} />
-          </div>
-          <div className="mt-8 text-center">
+          <figure className="mx-auto mt-8 max-w-sm overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={vunaScreens[0].src}
+              alt="Vuna Marketplace home"
+              className="block w-full"
+            />
+          </figure>
+          <div className="mt-10 text-center">
             <Link
               href="/portfolio"
               className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
             >
-              Explore Vuna Marketplace
+              See the full Vuna gallery
               <ArrowRight size={16} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ===================== PLAAS-IN ===================== */}
+      {/* ===================== PLAAS-IN (in development) ===================== */}
       <section
         id="plaasin"
         className="scroll-mt-20 border-t border-gray-100 bg-white px-6 py-20 md:px-8"
       >
-        <div className="reveal mx-auto max-w-6xl">
-          <div className="flex flex-col items-center text-center">
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-sage text-white">
-              <Tractor size={28} />
-            </span>
-            <h2 className="mt-5 font-serif text-3xl font-bold text-sage md:text-4xl">
-              Plaas-In
-            </h2>
-            <p className="mt-1 text-lg font-medium text-dark">
-              Practical Agricultural Administration
-            </p>
-            <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
-            <p className="mt-5 max-w-2xl text-[16px] leading-[1.9] text-gray-600">
-              A farm management and agricultural administration platform designed
-              around real farming realities.
-            </p>
-            <StatusBadge>Status: Architecture &amp; Prototype Development</StatusBadge>
-          </div>
-
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {/* Phase 1 */}
-            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
-              <div className="text-[11px] font-semibold uppercase tracking-[2px] text-forest/70">
-                Phase 1
-              </div>
-              <h4 className="mt-1 font-serif text-xl font-bold text-dark">
-                Livestock Core
-              </h4>
-              <ul className="mt-4 flex flex-col gap-2">
-                {plaasPhase1.map((p) => (
-                  <li
-                    key={p}
-                    className="flex items-center gap-2 text-sm text-gray-600"
-                  >
-                    <Check size={16} className="flex-shrink-0 text-sage" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Future Expansion */}
-            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
-              <div className="text-[11px] font-semibold uppercase tracking-[2px] text-forest/70">
-                Future Expansion
-              </div>
-              <h4 className="mt-1 font-serif text-xl font-bold text-dark">
-                Where we&apos;re headed
-              </h4>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {plaasFuture.map(({ icon: Icon, label }) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-2 rounded-xl bg-mint/40 px-3 py-2.5 text-sm font-medium text-dark"
-                  >
-                    <Icon size={18} className="flex-shrink-0 text-sage" />
-                    {label}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Vision Diagram */}
-          <h3 className="mt-16 text-center font-serif text-2xl font-bold text-dark">
-            Vision Diagram
-          </h3>
-          <div className="mt-8 flex flex-col flex-wrap items-center justify-center gap-3 md:flex-row">
-            {plaasFlow.map((stage, i) => (
-              <Fragment key={stage}>
-                <div
-                  className={`rounded-full px-5 py-2 text-sm font-semibold ${
-                    i === 0
-                      ? "bg-sage text-dark"
-                      : "border border-sage/40 bg-mint/40 text-forest"
-                  }`}
-                >
-                  {stage}
-                </div>
-                {i < plaasFlow.length - 1 && (
-                  <>
-                    <ChevronDown size={18} className="text-sage md:hidden" />
-                    <ChevronRight
-                      size={18}
-                      className="hidden text-sage md:block"
-                    />
-                  </>
-                )}
-              </Fragment>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 rounded-xl bg-sage px-7 py-3.5 text-[15px] font-semibold text-dark shadow-lg shadow-sage/30 transition-transform hover:-translate-y-0.5"
-            >
-              Learn About Plaas-In
-              <ArrowRight size={16} />
-            </Link>
-          </div>
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-sage text-white">
+            <Tractor size={28} />
+          </span>
+          <h2 className="mt-5 font-serif text-3xl font-bold text-sage md:text-4xl">
+            Plaas-In
+          </h2>
+          <p className="mt-1 text-lg font-medium text-dark">
+            Practical Agricultural Administration
+          </p>
+          <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.9] text-gray-600">
+            A WhatsApp-based farm management and agricultural administration
+            platform, designed around real South African farming realities —
+            starting with livestock records, health and bloodline tracking.
+          </p>
+          <StatusBadge>Status: In Development</StatusBadge>
         </div>
       </section>
 
@@ -456,7 +337,7 @@ export default function SolutionsPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {pillars.map(({ icon: Icon, label }, i) => (
               <Fragment key={label}>
-                <div className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-dark shadow-sm">
+                <div className="inline-flex items-center gap-2 rounded-full bg-offwhite px-5 py-2.5 text-sm font-semibold text-dark shadow-sm">
                   <Icon size={18} className="text-sage" />
                   {label}
                 </div>
@@ -493,13 +374,15 @@ export default function SolutionsPage() {
             mind.
           </p>
 
-          <Link
-            href="/portfolio"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-dark/20 px-7 py-3.5 text-sm font-medium text-dark transition-colors hover:bg-dark/5"
-          >
-            See the full evidence in our Portfolio
-            <ArrowRight size={16} />
-          </Link>
+          <div className="mt-8">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 rounded-xl border border-dark/20 px-7 py-3.5 text-sm font-medium text-dark transition-colors hover:bg-dark/5"
+            >
+              See the full evidence in our Portfolio
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 

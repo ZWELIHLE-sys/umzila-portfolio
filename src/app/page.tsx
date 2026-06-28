@@ -4,11 +4,9 @@ import {
   ArrowRight,
   Bus,
   Store,
-  Tractor,
   Check,
   Play,
   Images,
-  Lightbulb,
   Users,
   Laptop,
   MessagesSquare,
@@ -24,7 +22,6 @@ import PhoneMockup from "@/components/PhoneMockup";
 const demos = [
   { icon: Play, label: "ScholarHub Demo", href: "/solutions#scholarhub" },
   { icon: Images, label: "Vuna Marketplace", href: "/solutions#vuna" },
-  { icon: Lightbulb, label: "Plaas-In Concept", href: "/solutions#plaasin" },
 ];
 
 const platforms = [
@@ -41,13 +38,6 @@ const platforms = [
     tag: "Makers & Producers",
     desc: "A curated marketplace for people who genuinely make, craft and produce — artisans, fashion designers and farmers selling their own branded products. No resellers, no dropshipping.",
     focus: ["Local Producers", "Market Visibility", "Direct Connections"],
-  },
-  {
-    icon: Tractor,
-    name: "Plaas-In",
-    tag: "Agriculture",
-    desc: "Practical agricultural administration for farmers — starting with livestock records and management, built around real farming realities.",
-    focus: ["Livestock Core", "Health & Bloodline", "WhatsApp Automation"],
   },
 ];
 
@@ -98,7 +88,7 @@ export default function HomePage() {
       {/* ===================== HERO ===================== */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-24 md:px-8">
         <Image
-          src="/images/hero-core.jpg"
+          src="/images/scholartrans.jpg"
           alt=""
           fill
           priority
@@ -108,7 +98,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
         <HeroSparks />
 
-        <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
+        <div className="hero-enter-x relative z-10 mx-auto w-full max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
             Umzila-AfriRoute
           </div>
@@ -215,7 +205,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
             {platforms.map((p) => {
               const Icon = p.icon;
               return (
@@ -284,15 +274,16 @@ export default function HomePage() {
             <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.9] text-gray-600">
               A first look at{" "}
               <strong className="text-dark">Vuna Marketplace</strong> — our
-              curated marketplace for genuine makers and producers. 85%
-              complete, and the first platform going live.
+              curated marketplace for genuine makers and producers —
+              currently 45% complete and in active development.
             </p>
           </div>
 
-          <div className="mt-10">
+          <div className="mx-auto mt-10 max-w-sm">
             <ZoomImage
               src="https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727625/homepage_vuna_bt5d6q.jpg"
               alt="Vuna Marketplace preview"
+              aspect="aspect-[2/3]"
             />
           </div>
 

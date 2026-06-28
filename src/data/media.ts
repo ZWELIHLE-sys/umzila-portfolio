@@ -9,10 +9,29 @@ export const scholarVideos = [
     title: "Parent App Walkthrough",
     src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1781730906/parentapp_vidoe_sroyr7.mp4",
   },
-  { title: "Driver App Walkthrough", src: "" },
+  {
+    title: "Driver App Walkthrough",
+    src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1782522552/driver_app_vbpq96.mp4",
+  },
   {
     title: "Operator App Walkthrough",
     src: "https://res.cloudinary.com/dxdo1rhxz/video/upload/v1781730972/operator_app_vidoe_kcrcwj.mp4",
+  },
+];
+
+// Still screenshots used on the Solutions page (the written/idea page).
+export const scholarShots = [
+  {
+    title: "Parent App",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1782657720/parent_app_i3hnia.jpg",
+  },
+  {
+    title: "Driver App",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1782657689/driver_app_st12qm.jpg",
+  },
+  {
+    title: "Operator App",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1782657706/operator_app_dr3mwc.jpg",
   },
 ];
 
@@ -36,25 +55,5 @@ export const vunaScreens = [
   {
     title: "Sellers",
     src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727554/vuna_sellers_utozlp.jpg",
-  },
-  {
-    title: "Buyer Dashboard",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727770/buyer_dashboard_tg2jqe.jpg",
-  },
-  {
-    title: "Seller Dashboard",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727664/seller_dashboard_tskwqr.jpg",
-  },
-  {
-    title: "Cart",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727728/vuna_cart_mlg7qw.jpg",
-  },
-  {
-    title: "Login",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727705/vuna_login_rttzjy.jpg",
-  },
-  {
-    title: "Join",
-    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1781727690/vuna_join_qooato.jpg",
   },
 ];

@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Bus,
-  Store,
-  Tractor,
-  Video,
-  LayoutDashboard,
-  ArrowRight,
-} from "lucide-react";
+import { Bus, Store, Video, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
+import HeroSparks from "@/components/HeroSparks";
 import MediaPlaceholder from "@/components/MediaPlaceholder";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import { scholarVideos, vunaScreens } from "@/data/media";
@@ -19,13 +13,20 @@ import { scholarVideos, vunaScreens } from "@/data/media";
 export const metadata: Metadata = {
   title: "Portfolio — Umzila-AfriRoute | Proof of Work",
   description:
-    "Evidence of development across ScholarHub, Vuna Marketplace and Plaas-In — videos, screenshots, prototype diagrams and documents.",
+    "Evidence of development across ScholarHub and Vuna Marketplace — walkthrough videos and product screenshots.",
 };
 
-const plaasMedia = [
-  { title: "Prototype Screenshots", src: "" },
-  { title: "Concept Diagrams", src: "" },
-  { title: "Automation Demonstration", src: "" },
+const scholarMarketplace = [
+  {
+    title: "Request Transport",
+    subtitle: "Parent side — find verified operators in your area",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1782654874/request_tranposrt_u99lit.jpg",
+  },
+  {
+    title: "List Your Route",
+    subtitle: "Operator side — publish routes and reach local families",
+    src: "https://res.cloudinary.com/dxdo1rhxz/image/upload/v1782654892/list_route_glu1bi.jpg",
+  },
 ];
 
 function PlatformHeading({
@@ -60,9 +61,9 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* ===================== HERO ===================== */}
-      <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
+      <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
         <Image
-          src="/images/vr-tech.jpg"
+          src="/images/scholartrans.jpg"
           alt=""
           fill
           priority
@@ -70,8 +71,9 @@ export default function PortfolioPage() {
           className="ken-burns object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
+        <HeroSparks />
 
-        <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+        <div className="hero-enter relative z-10 mx-auto w-full max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
             Portfolio
           </div>
@@ -115,6 +117,40 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* ============ SCHOLARHUB — MARKETPLACE & ROUTE MATCHING ============ */}
+      <section className="border-t border-gray-100 bg-white px-6 py-20 md:px-8">
+        <div className="reveal mx-auto max-w-6xl">
+          <PlatformHeading
+            icon={Bus}
+            name="ScholarHub"
+            kind="Marketplace & Route Matching"
+          />
+          <p className="mx-auto -mt-2 mb-10 max-w-2xl text-center text-[16px] leading-[1.9] text-gray-600">
+            ScholarHub isn&apos;t just a set of apps — it&apos;s a two-sided
+            marketplace. Parents request transport in their area, operators list
+            their routes, and the platform connects families to verified
+            operators nearby.
+          </p>
+          <div className="mx-auto grid max-w-2xl gap-6 md:grid-cols-2">
+            {scholarMarketplace.map((s) => (
+              <figure
+                key={s.title}
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.src} alt={s.title} className="block w-full" />
+                <figcaption className="border-t border-gray-100 px-5 py-4 text-center">
+                  <div className="font-serif text-lg font-bold text-dark">
+                    {s.title}
+                  </div>
+                  <div className="mt-1 text-sm text-gray-500">{s.subtitle}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===================== VUNA SCREENSHOTS ===================== */}
       <section className="border-t border-gray-100 bg-white px-6 py-20 md:px-8">
         <div className="reveal mx-auto max-w-6xl">
@@ -124,28 +160,6 @@ export default function PortfolioPage() {
             kind="Screenshots"
           />
           <ScreenshotGallery slides={vunaScreens} />
-        </div>
-      </section>
-
-      {/* ===================== PLAAS-IN ===================== */}
-      <section className="border-t border-gray-100 bg-white px-6 py-20 md:px-8">
-        <div className="reveal mx-auto max-w-6xl">
-          <PlatformHeading
-            icon={Tractor}
-            name="Plaas-In"
-            kind="Prototype & Concept"
-          />
-          <div className="grid gap-6 md:grid-cols-3">
-            {plaasMedia.map((m) => (
-              <MediaPlaceholder
-                key={m.title}
-                icon={LayoutDashboard}
-                title={m.title}
-                subtitle="Coming soon"
-                aspect="aspect-[4/3]"
-              />
-            ))}
-          </div>
         </div>
       </section>
 

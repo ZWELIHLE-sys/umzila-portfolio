@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   TrendingUp,
   Users,
@@ -17,6 +16,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
+import HeroSparks from "@/components/HeroSparks";
 
 export const metadata: Metadata = {
   title: "Impact — Umzila-AfriRoute | Real Change for Communities",
@@ -144,18 +144,18 @@ export default function ImpactPage() {
       <Navbar />
 
       {/* ===================== HERO ===================== */}
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
-        <Image
-          src="/images/reach.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="ken-burns object-cover"
+      <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden bg-gradient-to-br from-dark via-emerald to-forest px-6 py-24 md:px-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-sage/20 blur-3xl"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-24 h-[28rem] w-[28rem] rounded-full bg-sage/10 blur-3xl"
+        />
+        <HeroSparks />
 
-        <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+        <div className="hero-enter relative z-10 mx-auto w-full max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
             Impact
           </div>

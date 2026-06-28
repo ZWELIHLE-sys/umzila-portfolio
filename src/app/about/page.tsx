@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Eye,
   Target,
@@ -15,6 +14,13 @@ import {
   Wrench,
   Cpu,
   Sprout,
+  Globe,
+  Palette,
+  Share2,
+  Megaphone,
+  FileText,
+  ShieldCheck,
+  PenTool,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -43,8 +49,46 @@ const platforms = [
   {
     icon: Tractor,
     name: "Plaas-In",
-    tag: "Agriculture",
-    desc: "An agricultural administration platform supporting farmers with practical digital tools — starting with livestock management and record keeping, with dairy, poultry, crop management and automation planned.",
+    tag: "Agriculture · In development",
+    desc: "A WhatsApp-based agricultural administration platform for farmers — starting with livestock records, health and bloodline tracking. Currently in development.",
+  },
+];
+
+const prServices = [
+  {
+    icon: Globe,
+    name: "Website Design & Development",
+    desc: "Modern, professional websites for local businesses and organisations.",
+  },
+  {
+    icon: Palette,
+    name: "Branding & Visual Identity",
+    desc: "Logos, brand materials and design that help businesses stand out.",
+  },
+  {
+    icon: Share2,
+    name: "Social Media & Digital Marketing",
+    desc: "Social media management and digital marketing that build presence.",
+  },
+  {
+    icon: Megaphone,
+    name: "Marketing & Advertising",
+    desc: "Practical marketing and advertising support to reach more customers.",
+  },
+  {
+    icon: FileText,
+    name: "Business Communication",
+    desc: "Company profiles, proposals and professional business writing.",
+  },
+  {
+    icon: ShieldCheck,
+    name: "Public Relations & Reputation",
+    desc: "Public relations and reputation management for organisations.",
+  },
+  {
+    icon: PenTool,
+    name: "Content Creation",
+    desc: "Flyers, posters and digital content that tell the story.",
   },
 ];
 
@@ -87,19 +131,18 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ===================== HEADER ===================== */}
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 py-24 md:px-8">
-        <Image
-          src="/images/hero-core.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="ken-burns object-cover"
+      <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden bg-gradient-to-br from-dark via-emerald to-forest px-6 py-24 md:px-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-sage/20 blur-3xl"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/45" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-24 h-[28rem] w-[28rem] rounded-full bg-sage/10 blur-3xl"
+        />
         <HeroSparks />
 
-        <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+        <div className="hero-enter relative z-10 mx-auto w-full max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-mint backdrop-blur-md">
             About Umzila-AfriRoute
           </div>
@@ -228,15 +271,16 @@ export default function AboutPage() {
       <section className="bg-white px-6 py-20 md:px-8">
         <div className="reveal mx-auto max-w-6xl">
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <div className="mb-3 inline-flex rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
-              The Platforms
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
+              <Cpu size={13} />
+              Technology Division
             </div>
             <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
               What We Are Building
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-[15px] text-gray-500">
-              Different platforms, one goal — practical technology rooted in
-              everyday realities.
+            <p className="mx-auto mt-3 max-w-lg text-[15px] text-gray-500">
+              The Technology Division builds digital platforms that solve real
+              challenges in transport, commerce and agriculture.
             </p>
           </div>
 
@@ -267,6 +311,48 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ===================== COMMUNICATIONS & PR DIVISION ===================== */}
+      <section className="bg-offwhite px-6 py-20 md:px-8">
+        <div className="reveal mx-auto max-w-6xl">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-sage px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-dark">
+              <Megaphone size={13} />
+              Communications &amp; PR Division
+            </div>
+            <h2 className="font-serif text-3xl font-bold text-sage md:text-4xl">
+              Professional communication services
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-[1.8] text-gray-500">
+              Drawing on the founder&apos;s background in Public Relations and
+              Communication — services ready to be delivered, a practical way to
+              begin generating income alongside the technology platforms.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {prServices.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.name}
+                  className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-sage/50 hover:shadow-md"
+                >
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sage text-white">
+                    <Icon size={24} />
+                  </span>
+                  <h3 className="mt-4 font-serif text-lg font-bold text-dark">
+                    {s.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    {s.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ===================== WHY TECH + COMMUNICATION ===================== */}
       <section className="bg-white px-6 py-20 text-center md:px-8">
         <div className="reveal mx-auto max-w-3xl">
@@ -279,15 +365,16 @@ export default function AboutPage() {
           <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-sage" />
           <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[16px] leading-[1.9] text-gray-600">
             <p>
-              Technology alone is not enough. Many good solutions fail because
-              they do not understand the people they are meant to serve.
+              We believe the best solutions begin with people — not platforms.
+              Technology opens doors, but it only creates lasting change when it
+              genuinely understands the community it is built to serve.
             </p>
             <p>
-              Umzila-AfriRoute combines technology with communication because
-              successful innovation requires listening, understanding, educating
-              and building trust — an approach shaped by the founder&apos;s
-              background in Public Relations Management and the belief that
-              meaningful solutions begin with understanding real community needs.
+              That is why Umzila-AfriRoute pairs technology with communication.
+              Guided by the founder&apos;s background in Public Relations and
+              Communication, we lead with listening, understanding and trust —
+              building solutions alongside the people who use them, so the
+              technology fits real lives, not the other way around.
             </p>
           </div>
         </div>

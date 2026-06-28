@@ -19,21 +19,21 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white">
-      <div className="flex h-16 items-center justify-between px-6 md:px-8">
+      <div className="flex h-20 items-center justify-between px-6 md:px-8">
         {/* Logo */}
         <Link
           href="/"
           aria-label="Umzila-AfriRoute home"
           className="flex items-center"
         >
-          <span className="relative block h-10 w-[190px]">
+          <span className="relative block h-14 w-[220px]">
             <Image
-              src="/images/logo-umzila.jpg"
+              src="/images/logo2-trim.png"
               alt="Umzila-AfriRoute"
               fill
               priority
-              sizes="190px"
-              className="object-cover object-center"
+              sizes="220px"
+              className="object-contain object-left"
             />
           </span>
         </Link>

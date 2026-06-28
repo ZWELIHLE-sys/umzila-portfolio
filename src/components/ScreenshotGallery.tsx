@@ -14,7 +14,7 @@ export default function ScreenshotGallery({ slides }: { slides: Slide[] }) {
   const current = slides[index];
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className="mx-auto max-w-sm">
       <div className="relative [perspective:1400px]">
         {current.src ? (
           <button
