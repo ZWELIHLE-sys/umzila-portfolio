@@ -19,7 +19,7 @@ import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import HeroSparks from "@/components/HeroSparks";
 import PhoneMockup from "@/components/PhoneMockup";
-import { scholarShots, vunaScreens } from "@/data/media";
+import { scholarShots, vunaScreens, cld } from "@/data/media";
 
 export const metadata: Metadata = {
   title: "Solutions — Umzila-AfriRoute | ScholarHub, Vuna, Plaas-In",
@@ -281,8 +281,10 @@ export default function SolutionsPage() {
           <figure className="mx-auto mt-8 max-w-sm overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={vunaScreens[0].src}
+              src={cld(vunaScreens[0].src, "f_auto,q_auto,w_800")}
               alt="Vuna Marketplace home"
+              loading="lazy"
+              decoding="async"
               className="block w-full"
             />
           </figure>

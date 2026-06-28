@@ -19,6 +19,14 @@ export const scholarVideos = [
   },
 ];
 
+// Insert Cloudinary delivery transformations (auto format + quality, optional
+// width) so screenshots ship as small WebP/AVIF instead of full-res JPGs.
+export function cld(url: string, transform = "f_auto,q_auto"): string {
+  return url.includes("/upload/")
+    ? url.replace("/upload/", `/upload/${transform}/`)
+    : url;
+}
+
 // Still screenshots used on the Solutions page (the written/idea page).
 export const scholarShots = [
   {

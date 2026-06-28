@@ -8,7 +8,7 @@ import RevealInit from "@/components/RevealInit";
 import HeroSparks from "@/components/HeroSparks";
 import MediaPlaceholder from "@/components/MediaPlaceholder";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
-import { scholarVideos, vunaScreens } from "@/data/media";
+import { scholarVideos, vunaScreens, cld } from "@/data/media";
 
 export const metadata: Metadata = {
   title: "Portfolio — Umzila-AfriRoute | Proof of Work",
@@ -138,7 +138,13 @@ export default function PortfolioPage() {
                 className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.src} alt={s.title} className="block w-full" />
+                <img
+                  src={cld(s.src, "f_auto,q_auto,w_800")}
+                  alt={s.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="block w-full"
+                />
                 <figcaption className="border-t border-gray-100 px-5 py-4 text-center">
                   <div className="font-serif text-lg font-bold text-dark">
                     {s.title}

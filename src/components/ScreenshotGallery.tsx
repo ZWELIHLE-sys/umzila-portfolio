@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Images, ZoomIn, X } from "lucide-react";
+import { cld } from "@/data/media";
 
 type Slide = { title: string; src: string };
 
@@ -26,7 +27,13 @@ export default function ScreenshotGallery({ slides }: { slides: Slide[] }) {
           >
             {/* Plain img so the screenshot keeps its own natural shape (no fixed box / letterbox) */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={current.src} alt={current.title} className="block w-full" />
+            <img
+              src={cld(current.src, "f_auto,q_auto,w_800")}
+              alt={current.title}
+              loading="lazy"
+              decoding="async"
+              className="block w-full"
+            />
             <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-dark/70 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
               <ZoomIn size={14} />
               Click to enlarge
