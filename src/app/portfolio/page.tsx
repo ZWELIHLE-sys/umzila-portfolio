@@ -141,7 +141,6 @@ export default function PortfolioPage() {
                 <img
                   src={cld(s.src, "f_auto,q_auto,w_800")}
                   alt={s.title}
-                  loading="lazy"
                   decoding="async"
                   className="block w-full"
                 />

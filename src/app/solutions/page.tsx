@@ -283,7 +283,6 @@ export default function SolutionsPage() {
             <img
               src={cld(vunaScreens[0].src, "f_auto,q_auto,w_800")}
               alt="Vuna Marketplace home"
-              loading="lazy"
               decoding="async"
               className="block w-full"
             />

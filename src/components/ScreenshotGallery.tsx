@@ -30,7 +30,6 @@ export default function ScreenshotGallery({ slides }: { slides: Slide[] }) {
             <img
               src={cld(current.src, "f_auto,q_auto,w_800")}
               alt={current.title}
-              loading="lazy"
               decoding="async"
               className="block w-full"
             />
