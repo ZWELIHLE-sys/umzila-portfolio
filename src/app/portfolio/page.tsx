@@ -82,7 +82,7 @@ export default function PortfolioPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-mint/95 drop-shadow-md">
             These are not just ideas. Here is the evidence of development across
-            our platforms — videos, screenshots, diagrams and documents.
+            our platforms — videos and screenshots.
           </p>
         </div>
       </section>
